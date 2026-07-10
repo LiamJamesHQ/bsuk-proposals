@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commercial Sauna Proposal — Barrel Sauna UK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#2B5336;        /* header + headings */
+    --forest-soft:#5f7d69;   /* muted forest */
+    --tan:#B07A34;           /* eyebrow / sub-labels */
+    --ink:#2b2b28;
+    --ink-soft:#5c5c54;
+    --cream:#f1f2ec;         /* page background */
+    --card:#ffffff;
+    --line:#e8e8e0;          /* hairline dividers */
+    --chip:#eef0ea;          /* number circle bg */
+    --gap-bg:#f6ede0;
+    --gap-ink:#8a6410;
+    --gap-line:#d8b878;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--cream);
+    font-family:'Poppins',-apple-system,BlinkMacSystemFont,sans-serif;
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- header ---------- */
+  .masthead{
+    background:var(--forest);
+    padding:56px 24px 60px;
+    text-align:center;
+    box-shadow:0 6px 18px rgba(43,83,54,.16);
+  }
+  .masthead h1{
+    color:#fff;font-weight:600;font-size:clamp(2rem,5vw,2.9rem);
+    letter-spacing:-.01em;margin-bottom:14px;
+  }
+  .masthead .eyebrow{
+    color:#c5d2c8;font-weight:500;font-size:13px;
+    letter-spacing:.18em;text-transform:uppercase;
+  }
+
+  /* ---------- card ---------- */
+  .shell{max-width:860px;margin:-24px auto 0;padding:0 20px 60px}
+  .card{
+    background:var(--card);border-radius:18px;
+    box-shadow:0 8px 30px rgba(43,43,40,.07);
+    padding:44px 40px;margin-bottom:22px;
+  }
+  @media(max-width:560px){.card{padding:32px 22px}}
+
+  .card-head h2{
+    color:var(--forest);font-weight:600;font-size:clamp(1.5rem,3.4vw,2rem);
+    letter-spacing:-.01em;margin-bottom:6px;
+  }
+  .card-head .sub{
+    color:var(--tan);font-weight:500;font-size:12.5px;
+    letter-spacing:.14em;text-transform:uppercase;margin-bottom:26px;
+  }
+
+  p{margin-bottom:15px;color:var(--ink-soft);max-width:64ch}
+  p.ink{color:var(--ink)}
+  p:last-child{margin-bottom:0}
+
+  .quote{
+    color:var(--forest);font-weight:400;font-size:1.15rem;line-height:1.45;
+    border-left:3px solid var(--tan);padding-left:20px;margin:22px 0;max-width:56ch;
+  }
+
+  /* numbered rows (concept, deposit, process) */
+  .rows{list-style:none}
+  .rows li{
+    display:flex;gap:18px;align-items:flex-start;
+    padding:18px 4px;border-bottom:1px solid var(--line);
+  }
+  .rows li:last-child{border-bottom:none}
+  .rows .num{
+    flex:0 0 auto;width:34px;height:34px;border-radius:50%;
+    background:var(--chip);color:var(--forest);
+    display:grid;place-items:center;font-weight:600;font-size:.9rem;margin-top:2px;
+  }
+  .rows .rtxt strong{display:block;color:var(--ink);font-weight:500;margin-bottom:2px}
+  .rows .rtxt span{color:var(--ink-soft);font-size:.97rem}
+
+  /* tick list (deposit inclusions / trust) */
+  .ticks{list-style:none}
+  .ticks li{
+    display:flex;gap:14px;align-items:flex-start;
+    padding:15px 4px;border-bottom:1px solid var(--line);
+  }
+  .ticks li:last-child{border-bottom:none}
+  .ticks .tk{color:var(--forest);font-weight:700;font-size:1.1rem;flex:0 0 auto;line-height:1.4}
+  .ticks .rtxt strong{display:block;color:var(--ink);font-weight:500;margin-bottom:2px}
+  .ticks .rtxt span{color:var(--ink-soft);font-size:.97rem}
+
+  /* trust chips */
+  .trust{display:flex;flex-wrap:wrap;gap:10px}
+  .trust .t{
+    font-size:.92rem;font-weight:500;color:var(--forest);
+    background:var(--chip);border-radius:999px;padding:8px 16px;
+  }
+
+  /* meta strip (prepared for/by/date) */
+  .meta{display:flex;flex-wrap:wrap;gap:30px;margin-top:4px}
+  .meta .lbl{
+    display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--tan);font-weight:600;margin-bottom:4px;
+  }
+  .meta .val{color:var(--ink);font-weight:500}
+
+  /* references */
+  .refs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:560px){.refs{grid-template-columns:1fr}}
+  .ref{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .ref-img{
+    height:150px;background:var(--gap-bg);border-bottom:1px dashed var(--gap-line);
+    display:grid;place-items:center;color:var(--gap-ink);
+    font-family:ui-monospace,monospace;font-size:.8rem;text-align:center;padding:12px;
+  }
+  .ref-b{padding:14px 16px}
+  .ref-b strong{display:block;color:var(--forest);font-weight:600;margin-bottom:4px}
+  .ref-b span{color:var(--ink-soft);font-size:.93rem}
+
+  /* placeholder */
+  .gap{
+    background:var(--gap-bg);border:1px dashed var(--gap-line);color:var(--gap-ink);
+    padding:2px 8px;border-radius:3px;
+    font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:.82em;font-weight:600;display:inline;
+  }
+  .gap-block{
+    background:var(--gap-bg);border:1px dashed var(--gap-line);color:var(--gap-ink);
+    padding:15px 18px;border-radius:6px;
+    font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:.84rem;line-height:1.55;margin:12px 0;
+  }
+  .gap-block strong{display:block;margin-bottom:6px;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase}
+
+  .note{font-size:.82rem;color:var(--forest-soft);font-style:italic;margin-top:12px}
+
+  /* close card */
+  .close{background:var(--forest);text-align:center;color:#fff}
+  .close h2{color:#fff}
+  .close p{color:#c5d2c8;margin:0 auto 8px;max-width:52ch}
+  .close .signoff{color:#fff;font-weight:600;margin-top:20px}
+
+  footer{text-align:center;color:var(--forest-soft);font-size:12px;padding:8px 0 20px}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="masthead">
+  <h1>Barrel Sauna UK</h1>
+  <div class="eyebrow">Commercial Proposal · Prepared for Sanju</div>
+</header>
+
+<div class="shell">
+
+  <!-- HERO / INTRO CARD -->
+  <div class="card">
+    <div class="card-head">
+      <h2>A sauna built right, first time</h2>
+      <div class="sub">Bespoke commercial build · Lakeside site</div>
+    </div>
+    <p class="ink">A bespoke commercial sauna for your lakeside site — designed around compliance, privacy, and the long game.</p>
+    <div class="meta">
+      <div>
+        <span class="lbl">Prepared for</span>
+        <span class="val">Sanju <span class="gap">[SURNAME / SITE]</span></span>
+      </div>
+      <div>
+        <span class="lbl">Prepared by</span>
+        <span class="val">Nikki · Barrel Sauna UK</span>
+      </div>
+      <div>
+        <span class="lbl">Date</span>
+        <span class="val"><span class="gap">[DATE]</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 01 · YOUR VISION -->
+  <div class="card">
+    <div class="card-head">
+      <h2>The brief, as we heard it</h2>
+      <div class="sub">01 — Your vision</div>
+    </div>
+    <p class="ink">You were clear on the call: this pilot has to be right the first time. Everything here is built around that.</p>
+    <p>You're building a lakeside commercial sauna site — a pilot ahead of a potential national rollout. Your priorities were plain: compliance and health &amp; safety non-negotiable, privacy for guests respected, and a build that's minimal and considered — just right, not more and never less.</p>
+    <p class="quote">"Having everything right in the first go is non-negotiable for us."</p>
+    <p>That's exactly how we work. A Welsh family business, handmade and made to order — not a mass-produced flatpack import. When something needs putting right, we're the ones who come back out.</p>
+  </div>
+
+  <!-- 02 · THE CONCEPT -->
+  <div class="card">
+    <div class="card-head">
+      <h2>Your build, as we're picturing it</h2>
+      <div class="sub">02 — The concept</div>
+    </div>
+    <p>A starting point to steer — every element here is refined with you once you're on board.</p>
+    <ul class="rows">
+      <li><span class="num">1</span><span class="rtxt"><strong>Form</strong><span>Glass-fronted, straight-edge sauna — clean and modern, making the most of a lakeside outlook.</span></span></li>
+      <li><span class="num">2</span><span class="rtxt"><strong>Heat</strong><span>Wood-burning, with the log feed running through the changing room — no bringing the outside in.</span></span></li>
+      <li><span class="num">3</span><span class="rtxt"><strong>Porch</strong><span>A covered porch — a considered addition that sets your build apart and handles the British weather.</span></span></li>
+      <li><span class="num">4</span><span class="rtxt"><strong>Lighting</strong><span>Warm, low ambient glow — under-seat and behind the backrest only. No ceiling spotlights. Privacy first.</span></span></li>
+      <li><span class="num">5</span><span class="rtxt"><strong>Controls</strong><span>Wi-Fi heater that turns itself on and off on a schedule — low-maintenance to run day to day.</span></span></li>
+      <li><span class="num">6</span><span class="rtxt"><strong>Booking</strong><span>Online booking with waiver and terms built into the flow — guests agree before they arrive.</span></span></li>
+    </ul>
+    <div class="gap-block">
+      <strong>Placeholder — Liam to confirm</strong>
+      Dimensions / model size, cladding &amp; timber finish, glass spec, any spec numbers. No measurements were confirmed on the call — nothing invented. Add real figures before this goes out.
+    </div>
+    <p class="note">Concept renders / visuals to be added once produced.</p>
+  </div>
+
+  <!-- 03 · DEPOSIT -->
+  <div class="card">
+    <div class="card-head">
+      <h2>What your £500 secures</h2>
+      <div class="sub">03 — Your deposit</div>
+    </div>
+    <p>You asked for this in detail, to talk through with your partner. Here it is, plainly.</p>
+    <div class="gap-block">
+      <strong>Placeholder — Liam to define the exact inclusions</strong>
+      This list does not yet exist as a fixed asset. The rows below are a suggested structure drawn from the call — confirm, cut, or add lines. Once locked, this becomes the standard deposit breakdown for every client.
+    </div>
+    <ul class="ticks">
+      <li><span class="tk">✓</span><span class="rtxt"><strong>Your bespoke concept design</strong><span>Full conceptual drawings for your build, tailored to your site — delivered within one week of your deposit.</span></span></li>
+      <li><span class="tk">✓</span><span class="rtxt"><strong>Unlimited design tweaks</strong><span>We refine and re-work the concept until it's right — as many rounds as it takes, once you're on board.</span></span></li>
+      <li><span class="tk">✓</span><span class="rtxt"><strong>Your place in the order queue</strong><span>The £500 secures your slot and priority as builds are scheduled. <span class="gap">[confirm wording]</span></span></span></li>
+      <li><span class="tk">✓</span><span class="rtxt"><strong><span class="gap">[FURTHER INCLUSION — ballpark costing / spec sheet?]</span></strong><span>Liam to confirm what else the deposit formally covers.</span></span></li>
+    </ul>
+    <p class="note">Note: the £500 deposit is non-refundable. Ensure wording here matches the deposit page and terms exactly.</p>
+  </div>
+
+  <!-- 04 · PROCESS -->
+  <div class="card">
+    <div class="card-head">
+      <h2>From deposit to delivery</h2>
+      <div class="sub">04 — The process</div>
+    </div>
+    <p>A clear run of what happens, and when — so you can plan your side around it.</p>
+    <ul class="rows">
+      <li><span class="num">1</span><span class="rtxt"><strong>Deposit &amp; concept</strong><span>Once your deposit's in, your concept drawings land within a week. We then tweak until it's perfect.</span></span></li>
+      <li><span class="num">2</span><span class="rtxt"><strong>Sign-off &amp; order</strong><span>When the design's right and you're ready, your build goes into the queue.</span></span></li>
+      <li><span class="num">3</span><span class="rtxt"><strong>Build &amp; lead time</strong><span>Current build lead time is 7–8 weeks. Allowing for scheduling and delivery, plan for roughly three months order-to-delivery. <span class="gap">[confirm at send]</span></span></span></li>
+      <li><span class="num">4</span><span class="rtxt"><strong>Install &amp; handover</strong><span>Our team installs, walks every element with you, and signs off on site — which activates your warranty.</span></span></li>
+    </ul>
+  </div>
+
+  <!-- 05 · WARRANTY -->
+  <div class="card">
+    <div class="card-head">
+      <h2>Standing behind the build</h2>
+      <div class="sub">05 — After handover</div>
+    </div>
+    <p class="ink">At install, our team walks round every element of your build with you — the way you'd check a new home on move-in. That sign-off, done on site, is what activates your warranty.</p>
+    <p>Anything within warranty and within reason, we come back out and put it right. Devon, Cornwall, Scotland, Ireland — being UK-based and family-run, we make the trip.</p>
+    <div class="gap-block">
+      <strong>Placeholder — warranty terms</strong>
+      Liam to confirm coverage period &amp; specifics.
+    </div>
+  </div>
+
+  <!-- 06 · REFERENCES -->
+  <div class="card">
+    <div class="card-head">
+      <h2>Selected commercial builds</h2>
+      <div class="sub">06 — Our work</div>
+    </div>
+    <p>You asked to see our larger commercial projects specifically. A selection below.</p>
+    <div class="gap-block">
+      <strong>Placeholder — commercial references</strong>
+      Pull 3–4 large commercial builds only (not residential). For each: photo, project name/area, scale, one-line story. Keep generic — do not identify specific clients or exact locations.
+    </div>
+    <div class="refs">
+      <div class="ref"><div class="ref-img">[ PROJECT IMAGE 1 ]</div><div class="ref-b"><strong><span class="gap">[Project / area]</span></strong><span><span class="gap">[Scale + story]</span></span></div></div>
+      <div class="ref"><div class="ref-img">[ PROJECT IMAGE 2 ]</div><div class="ref-b"><strong><span class="gap">[Project / area]</span></strong><span><span class="gap">[Scale + story]</span></span></div></div>
+      <div class="ref"><div class="ref-img">[ PROJECT IMAGE 3 ]</div><div class="ref-b"><strong><span class="gap">[Project / area]</span></strong><span><span class="gap">[Scale + story]</span></span></div></div>
+      <div class="ref"><div class="ref-img">[ PROJECT IMAGE 4 ]</div><div class="ref-b"><strong><span class="gap">[Project / area]</span></strong><span><span class="gap">[Scale + story]</span></span></div></div>
+    </div>
+  </div>
+
+  <!-- 07 · WHY US -->
+  <div class="card">
+    <div class="card-head">
+      <h2>Why work with us</h2>
+      <div class="sub">07 — Why Barrel Sauna UK</div>
+    </div>
+    <div class="trust">
+      <span class="t">✓ Welsh family business</span>
+      <span class="t">✓ Handmade and made to order</span>
+      <span class="t">✓ Designed around you</span>
+      <span class="t">✓ Built to last</span>
+      <span class="t">✓ Commercial-grade quality</span>
+      <span class="t">✓ UK-based aftercare</span>
+    </div>
+  </div>
+
+  <!-- CLOSE -->
+  <div class="card close">
+    <div class="card-head">
+      <h2>Let's get it right, first time</h2>
+    </div>
+    <p>Take this through with your partner. When you're ready, we'll get your concept underway within the week.</p>
+    <p class="signoff">— Nikki, Barrel Sauna UK</p>
+    <p style="margin-top:14px"><span class="gap">[CONTACT — phone / email / WhatsApp]</span></p>
+  </div>
+
+</div>
+
+<footer>Barrel Sauna UK · Handcrafted in Wales</footer>
+
+</body>
+</html>
