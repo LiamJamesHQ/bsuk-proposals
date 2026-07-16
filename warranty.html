@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Floating Sauna Warranty — Working Draft</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#2B5336; --forest-dark:#243d29; --sage:#50795F; --sage-pale:#8fae86;
+  --sage-muted:#7d9a86; --terracotta:#C08B41; --terracotta-bg:#fdf6ec; --bone:#F1F2EC;
+  --bone-dark:#e8eae2; --panel:#f7f8f3; --body:#4a4a4a; --sub:#999999; --fine:#bbbbbb;
+  --dead:#aaaaaa; --dead-border:#d8d3cb; --hairline:rgba(43,83,54,0.12);
+  --card-border:rgba(58,82,52,0.15);
+  --face:'Raleway',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --gutter:32px; --radius:8px;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bone-dark);font-family:var(--face);color:var(--body);
+  line-height:1.8;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:860px;margin:0 auto;padding:40px 20px 80px;}
+
+/* masthead */
+.mast{background:var(--forest);border-radius:var(--radius);padding:34px var(--gutter);margin-bottom:14px;}
+.mast .logo{font-size:12px;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:#fff;margin:0 0 20px;}
+.mast .logo span{color:var(--terracotta);}
+.mast .kicker{font-size:11px;font-weight:400;color:var(--sage-pale);letter-spacing:2.5px;text-transform:uppercase;margin:0 0 10px;}
+.mast h1{font-size:28px;font-weight:400;color:#fff;margin:0;line-height:1.25;}
+.mast .sub{font-size:14px;font-weight:400;color:var(--sage-pale);line-height:1.75;margin:14px 0 0;max-width:560px;}
+
+/* draft banner */
+.banner{background:var(--terracotta-bg);border:1px solid rgba(192,139,65,0.3);border-radius:var(--radius);
+  padding:20px 26px;margin-bottom:26px;}
+.banner .label{font-size:11px;font-weight:400;color:var(--terracotta);letter-spacing:2px;text-transform:uppercase;margin:0 0 8px;}
+.banner p{font-size:14px;font-weight:400;color:var(--body);line-height:1.75;margin:0;}
+
+/* cards */
+.card{background:#fff;border:1px solid var(--card-border);border-radius:var(--radius);overflow:hidden;margin-bottom:22px;}
+.card__head{background:var(--forest);padding:20px var(--gutter);}
+.card__head h2{font-size:11px;font-weight:400;color:var(--sage-pale);letter-spacing:2.5px;text-transform:uppercase;margin:0;}
+.card__body{padding:var(--gutter);}
+
+.label{font-size:11px;font-weight:400;color:var(--sage-muted);letter-spacing:2px;text-transform:uppercase;margin:0 0 8px;}
+.focal{font-size:16px;font-weight:400;color:var(--terracotta);line-height:1.5;margin:0 0 4px;}
+.prose{font-size:15px;font-weight:400;color:var(--body);line-height:1.8;margin:0 0 18px;}
+.prose:last-child{margin-bottom:0;}
+.sub{font-size:14px;font-weight:400;color:var(--sub);line-height:1.75;margin:0;}
+.fine{font-size:12px;font-weight:400;color:var(--fine);line-height:1.7;margin:0;}
+h3{font-size:15px;font-weight:400;color:var(--forest);margin:0 0 6px;line-height:1.5;}
+
+/* warranty table */
+table.data{width:100%;border-collapse:collapse;margin:0;}
+table.data th{background:var(--forest);color:#fff;font-size:11px;font-weight:400;letter-spacing:1.5px;
+  text-transform:uppercase;padding:12px 16px;text-align:left;vertical-align:top;}
+table.data td{padding:14px 16px;font-size:14px;color:var(--body);border-bottom:1px solid rgba(43,83,54,0.08);
+  vertical-align:top;line-height:1.65;}
+table.data tr:last-child td{border-bottom:0;}
+table.data .term{color:var(--forest);white-space:nowrap;}
+table.data .cover{color:var(--body);}
+table.data .excl{color:var(--sub);}
+
+/* editable note */
+.note{background:var(--panel);border-left:3px solid var(--terracotta);border-radius:6px;
+  padding:16px 20px;margin:16px 0 0;}
+.note .label{margin-bottom:6px;}
+.note p{font-size:13px;font-weight:400;color:var(--body);line-height:1.7;margin:0;}
+.note--open{border-left-color:var(--dead-border);}
+.note--open .label{color:var(--dead);}
+
+/* reasoning blocks */
+.why{margin:0 0 20px;}
+.why:last-child{margin-bottom:0;}
+.why .head{display:flex;align-items:baseline;gap:14px;margin:0 0 8px;}
+.why .idx{font-size:12px;font-weight:400;color:var(--terracotta);letter-spacing:2px;}
+.why .head h3{margin:0;}
+.why p{font-size:14px;font-weight:400;color:var(--body);line-height:1.8;margin:0 0 10px;}
+.why p:last-child{margin-bottom:0;}
+.why .eg{background:var(--panel);border-radius:6px;padding:14px 18px;margin:10px 0 0;}
+.why .eg .label{margin-bottom:6px;}
+.why .eg p{font-size:13px;color:var(--body);line-height:1.7;margin:0;}
+
+.tick{font-size:14px;font-weight:400;color:var(--sub);line-height:1.7;margin:0 0 12px;}
+.tick:last-child{margin-bottom:0;}
+.tick span{color:var(--terracotta);}
+
+hr.rule{border:0;border-top:1px solid var(--hairline);margin:28px 0;}
+
+.foot{text-align:center;padding:30px 0 0;}
+.foot p{font-size:12px;font-weight:400;color:var(--fine);letter-spacing:0.5px;margin:0;}
+
+/* print button */
+.printbar{text-align:right;margin:0 0 18px;}
+.printbtn{display:inline-block;background:var(--terracotta);color:#fff;border:0;border-radius:6px;
+  padding:12px 28px;font-family:var(--face);font-size:14px;font-weight:500;letter-spacing:0.5px;cursor:pointer;}
+.printbtn:hover{background:#b07d38;}
+
+@media(max-width:640px){
+  .mast h1{font-size:23px;}
+  table.data th,table.data td{padding:10px 12px;font-size:13px;}
+  table.data .term{white-space:normal;}
+}
+
+@media print{
+  @page{margin:14mm;}
+  body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .wrap{max-width:100%;padding:0;}
+  .printbar{display:none;}
+  .card,.banner,.mast{break-inside:avoid;page-break-inside:avoid;box-shadow:none;}
+  .card{border:1px solid var(--card-border);}
+  .why{break-inside:avoid;page-break-inside:avoid;}
+  hr.rule{display:none;}
+  a[href]:after{content:"";}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="printbar">
+    <button class="printbtn" onclick="window.print()">Download PDF</button>
+  </div>
+
+  <div class="mast">
+    <p class="logo">Barrel Sauna <span>UK</span></p>
+    <p class="kicker">Internal Working Draft</p>
+    <h1>Floating Sauna Warranty</h1>
+    <p class="sub">A starting position for the terms we offer on floating and pontoon-mounted builds, with the reasoning behind each choice. Built to edit together, not to publish.</p>
+  </div>
+
+  <div class="banner">
+    <p class="label">Draft — not customer-facing</p>
+    <p>Nothing here is agreed or offered yet. Every figure is a starting point drawn from what other UK and industry builders publish. Read the reasoning, change what doesn't fit, and once the terms are locked this becomes the standard floating-build warranty. Do not put any of these numbers in front of a customer until signed off.</p>
+  </div>
+
+  <!-- ============ THE DRAFT TERMS ============ -->
+  <div class="card">
+    <div class="card__head"><h2>The Draft Terms</h2></div>
+    <div class="card__body">
+      <p class="label">What we'd cover, and for how long</p>
+      <p class="focal">A tiered warranty — long on the things we build, short on the things we fit</p>
+      <p class="prose">The structure we make ourselves carries the longest cover. Bought-in parts carry the supplier's own term. Anything on or in the water is tied to the marine engineer's sign-off. Commercial units are shorter than domestic, because they take far heavier use.</p>
+
+      <table class="data">
+        <thead>
+          <tr>
+            <th style="width:26%;">Element</th>
+            <th style="width:18%;">Term</th>
+            <th style="width:30%;">What's covered</th>
+            <th style="width:26%;">Not covered</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="term">Cabin structure &amp; timber</td>
+            <td class="term">2 years</td>
+            <td class="cover">Manufacturing defects in the frame, cladding and joinery we build in the workshop.</td>
+            <td class="excl">Movement, checking or colour change natural to outdoor timber.</td>
+          </tr>
+          <tr>
+            <td class="term">Pontoon / float &amp; frame</td>
+            <td class="term">Tied to sign-off</td>
+            <td class="cover">Structural integrity of the platform, to the standard the independent marine engineer certifies at handover.</td>
+            <td class="excl">Anything outside the engineer's stated conditions of use.</td>
+          </tr>
+          <tr>
+            <td class="term">Heater, control panel &amp; electrics</td>
+            <td class="term">Supplier's term (Harvia 2 yr)</td>
+            <td class="cover">Passed through from the manufacturer. We register it in your name.</td>
+            <td class="excl">We don't extend beyond what the maker gives.</td>
+          </tr>
+          <tr>
+            <td class="term">Fixtures, lighting, benching</td>
+            <td class="term">1 year</td>
+            <td class="cover">Workmanship on fitted internal components.</td>
+            <td class="excl">Wear, and consumables like stones.</td>
+          </tr>
+          <tr>
+            <td class="term">Commercial use loading</td>
+            <td class="term">Applies to all rows</td>
+            <td class="cover">Terms above apply as written for a commercial site.</td>
+            <td class="excl">Domestic-length cover is not offered on paying-guest units.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        <p class="label">Editable — Liam to confirm</p>
+        <p>Structure sits at 2 years to mirror the Harvia heater term, so the whole unit reads as one consistent promise. Push to 3–5 if you want structure to feel premium; the industry does go there on domestic. Kept at 2 here because it's the first commercial floating build and shorter is safer.</p>
+      </div>
+      <div class="note note--open">
+        <p class="label">Still open</p>
+        <p>The pontoon row can't be pinned to a number until we've spoken to the marine engineer — their sign-off defines what we're standing behind. Left deliberately as "tied to sign-off" until that's known.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GENERAL EXCLUSIONS ============ -->
+  <div class="card">
+    <div class="card__head"><h2>What Sits Outside Any Cover</h2></div>
+    <div class="card__body">
+      <p class="prose">These apply across every row above, and are standard across the sector.</p>
+      <p class="tick"><span>✓</span>&nbsp;&nbsp; Damage from misuse, accident, or use beyond the stated capacity.</p>
+      <p class="tick"><span>✓</span>&nbsp;&nbsp; Failure to follow the maintenance schedule we hand over on the day.</p>
+      <p class="tick"><span>✓</span>&nbsp;&nbsp; Owner modifications or third-party work after handover.</p>
+      <p class="tick"><span>✓</span>&nbsp;&nbsp; Natural movement, weathering and colour change in outdoor timber.</p>
+      <p class="tick"><span>✓</span>&nbsp;&nbsp; Consumables — sauna stones, bulbs, seals.</p>
+      <p class="tick"><span>✓</span>&nbsp;&nbsp; Anything the marine engineer's conditions of use specifically exclude.</p>
+      <div class="note">
+        <p class="label">Editable — Liam to confirm</p>
+        <p>The maintenance-schedule line only holds if we actually give one on the day. If we don't yet have a written schedule for floating units, that's a small job worth doing — it's what makes this exclusion enforceable.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ HOW WE HANDLE A CLAIM ============ -->
+  <div class="card">
+    <div class="card__head"><h2>How We'd Handle a Callout</h2></div>
+    <div class="card__body">
+      <p class="prose">This mirrors how the barrel-sauna warranty already works in practice, written down so it's consistent.</p>
+      <h3>Genuine structural or build fault</h3>
+      <p class="sub" style="margin-bottom:16px;">We come out, or tie it into a nearby install, and put it right. This is what the cover is for.</p>
+      <h3>Heater or electrical fault</h3>
+      <p class="sub" style="margin-bottom:16px;">Handled through the Harvia warranty we registered in your name; we help you run the claim.</p>
+      <h3>Pontoon or buoyancy concern</h3>
+      <p class="sub">Referred to the marine engineer who signed the unit off — the same professional who set the conditions inspects against them. This keeps liability where the certification sits.</p>
+      <div class="note">
+        <p class="label">Why this matters</p>
+        <p>Routing buoyancy questions back to the certifying engineer means we're never the ones judging whether a float is safe — the qualified party who signed it off is. That protects BSUK on the exact question a careful commercial buyer will ask.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ============ WHY WE'RE DOING THIS ============ -->
+  <div class="card">
+    <div class="card__head"><h2>Why We're Setting This Out</h2></div>
+    <div class="card__body">
+
+      <div class="why">
+        <div class="head"><span class="idx">01</span><h3>A floating build carries risk a garden sauna never did</h3></div>
+        <p>A barrel sauna in someone's garden can fail quietly and cheaply. A 25-person commercial unit on water, with paying guests, cannot. The question a serious buyer asks first is "what happens if something goes wrong" — and on water that question has real weight. Having a written answer ready is the difference between sounding like a workshop and sounding like a business that has done this before.</p>
+        <div class="eg">
+          <p class="label">Example</p>
+          <p>Sanjay asked on her call, directly, what the warranty is and whether we'd come out for repairs. Right now the honest answer is "we don't know yet for a pontoon." This doc turns that into a confident, specific answer.</p>
+        </div>
+      </div>
+
+      <div class="why">
+        <div class="head"><span class="idx">02</span><h3>The heater is one part of an entire structure</h3></div>
+        <p>The way the barrel warranty already works is that Harvia gives two years and we pass it on — we don't offer longer than the part supplier gives. That logic is sound, but on a floating build the heater is a small fraction of what we've made. Passing through the heater term says nothing about the cabin, the float, or the frame — which is exactly what the customer is worried about. A tiered warranty lets us keep the sensible pass-through on the heater while saying something real about the parts we actually build.</p>
+        <div class="eg">
+          <p class="label">Industry example</p>
+          <p>This is standard practice, not us inventing something. Flagship (a pontoon builder) gives a 5-year structural warranty but only a 1-year warranty on all electronics and electrical components. Vanderbilt covers the whole structure for life but states the engine warranty is the engine manufacturer's, not theirs. Long on the hull, short on bought-in parts — the exact shape we're proposing.</p>
+        </div>
+      </div>
+
+      <div class="why">
+        <div class="head"><span class="idx">03</span><h3>Commercial use has to be shorter than domestic</h3></div>
+        <p>A domestic sauna gets used a few times a week. A commercial floating unit with 25 people and doors opening constantly gets hammered. Offering the same warranty on both would mean either under-charging domestic or over-exposing ourselves on commercial. The sector already draws this line, and so should we — especially on the very first one, where we're still learning the build.</p>
+        <div class="eg">
+          <p class="label">Industry example</p>
+          <p>Flagship explicitly caps it: their rental pontoons are limited to a 1-year warranty, against 5 years for a privately-owned one. The heavier the use, the shorter the cover. Sanjay's is a paying-guest site, so it belongs on the shorter side.</p>
+        </div>
+      </div>
+
+      <div class="why">
+        <div class="head"><span class="idx">04</span><h3>It keeps liability where the certification sits</h3></div>
+        <p>We're bringing in an independent marine engineer to sign off buoyancy and stability anyway. Tying the pontoon warranty to their sign-off, and routing any float question back to them, means we never put ourselves in the position of judging whether the platform is safe. The qualified professional who certified it is the one who inspects it. That's the cleanest possible liability position on the part of the build we have least history with.</p>
+        <div class="eg">
+          <p class="label">Ties to</p>
+          <p>Same principle as the trailers — we don't self-certify roadworthiness, the DVSA does, and that's what protects us. Here the marine engineer plays the DVSA role.</p>
+        </div>
+      </div>
+
+      <div class="why">
+        <div class="head"><span class="idx">05</span><h3>A clear warranty is a selling tool, not just a cost</h3></div>
+        <p>Our nearest UK competitor leans on being "fully insured, professionally engineered." A written, tiered warranty lets us stand next to that instead of looking like a first-timer. It reassures the careful buyer, it justifies the price, and once it's locked it carries forward to every floating build after this one — the same way the deposit gate became reusable. We do the thinking once, then it works for us on every enquiry.</p>
+        <div class="eg">
+          <p class="label">Reusable</p>
+          <p>Like the £500 deposit reasoning — write it properly once for Sanjay, and it becomes the standard floating-warranty asset for the next holiday park, marina, or lakeside client.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ FOR SANJAY ============ -->
+  <div class="card">
+    <div class="card__head"><h2>What Goes In Sanjay's Proposal — For Now</h2></div>
+    <div class="card__body">
+      <p class="prose">Until these terms are signed off, her proposal should not state a warranty length. The safe interim line keeps it in the same "we'll confirm this properly" bucket as certification and delivery, without promising anything early.</p>
+      <div class="note">
+        <p class="label">Suggested placeholder line</p>
+        <p>"Full warranty terms are confirmed at order stage, structured around the build, the heater manufacturer's cover, and the independent marine engineer's certification. We'll walk you through exactly what's covered before you commit."</p>
+      </div>
+      <p class="sub" style="margin-top:16px;">This says we've thought about it, ties it to the certification story she already cares about, and commits us to nothing we haven't locked. Once the terms above are agreed, this gets replaced with the real breakdown.</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>Barrel Sauna UK &nbsp;•&nbsp; Handcrafted in Wales &nbsp;•&nbsp; Internal working draft</p>
+  </div>
+
+</div>
+</body>
+</html>
