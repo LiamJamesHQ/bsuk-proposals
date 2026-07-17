@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+:root{
+  --forest:#2B5336; --forest-dark:#243d29;
+  --sage:#50795F; --sage-pale:#8fae86; --sage-muted:#7d9a86;
+  --terracotta:#C08B41; --honey:#C08B41; --thermo:#96502B;
+  --bone:#F1F2EC; --bone-dark:#e8eae2; --panel:#f7f8f3;
+  --body:#4a4a4a; --sub:#999999; --fine:#bbbbbb;
+  --hairline:rgba(43,83,54,0.12); --card-border:rgba(58,82,52,0.15);
+  --maroon:#5E1F28; --maroon-bg:rgba(94,31,40,0.05);
+  --face:'Raleway',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+@page{size:A4; margin:0;}
+html,body{background:var(--bone);}
+body{font-family:var(--face); color:var(--body); line-height:1.8; -webkit-font-smoothing:antialiased;}
+.page{width:210mm; padding:0; margin:0 auto; background:#fff; position:relative;}
+
+/* cover band */
+.band{background:var(--forest); color:var(--bone); padding:38px 46px 32px;}
+.band .kicker{font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--sage-pale); margin-bottom:16px;}
+.band h1{font-size:32px; font-weight:700; line-height:1.2; margin-bottom:14px; color:var(--bone);}
+.band .meta{font-size:13px; font-weight:400; color:var(--sage-pale); line-height:1.7;}
+
+.inner{padding:28px 46px 24px;}
+
+.intro{font-size:13.5px; font-weight:400; color:var(--body); line-height:1.7; margin-bottom:22px;}
+
+.label{font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--sage-muted); margin-bottom:16px;}
+
+/* estimate table */
+table.est{width:100%; border-collapse:collapse; margin-bottom:8px;}
+table.est td{padding:11px 0; border-bottom:1px solid var(--hairline); vertical-align:top;}
+table.est td.item{font-size:15px; font-weight:700; color:var(--forest);}
+table.est td.desc{font-size:13px; font-weight:400; color:var(--body); line-height:1.6; padding-top:4px;}
+table.est td.price{font-size:15px; font-weight:400; color:var(--terracotta); text-align:right; white-space:nowrap;}
+.ph{color:var(--terracotta); font-weight:400;}
+.prov{font-size:11px; color:var(--sub); font-weight:400;}
+
+/* total row */
+.total{display:flex; justify-content:space-between; align-items:baseline; padding:16px 0 5px; margin-top:2px; border-top:2px solid var(--forest);}
+.total .tlabel{font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--forest);}
+.total .tfig{font-size:24px; font-weight:400; color:var(--forest);}
+.total-note{font-size:12px; color:var(--sub); font-weight:400; margin-top:4px; line-height:1.6;}
+
+/* provisional callout */
+.provbox{background:var(--panel); border-left:3px solid var(--sage); border-radius:6px; padding:14px 18px; margin:18px 0;}
+.provbox p{font-size:12.5px; font-weight:400; color:var(--body); line-height:1.7;}
+
+/* deposit panel */
+.deposit{background:var(--terracotta); border-radius:8px; padding:26px 28px; margin:22px 0 18px;}
+.deposit .dlabel{font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#fbeed8; margin-bottom:10px;}
+.deposit .dfig{font-size:26px; font-weight:800; color:#fff; margin-bottom:10px; line-height:1.2;}
+.deposit .dsub{font-size:13px; font-weight:400; color:#fdf6ec; line-height:1.7;}
+.deposit .dlink{font-size:14px; font-weight:700; color:#fff; margin-top:14px; word-break:break-all;}
+
+/* steps */
+.steps{margin:16px 0 6px;}
+.step{display:flex; gap:14px; padding:7px 0; border-top:1px solid var(--hairline);}
+.step:first-child{border-top:none;}
+.step .n{flex:0 0 22px; font-size:13px; font-weight:700; color:var(--terracotta);}
+.step .t{font-size:13px; font-weight:400; color:var(--body); line-height:1.6;}
+
+/* footer */
+.foot{padding:20px 46px 24px; border-top:1px solid var(--hairline); text-align:center;}
+.foot .sign{font-size:14px; font-weight:400; color:var(--forest); margin-bottom:12px;}
+.foot p{font-size:11px; font-weight:400; color:var(--sub); line-height:1.8;}
+.foot a{color:var(--sage); text-decoration:none;}
+
+.printbar{max-width:210mm; margin:0 auto; text-align:right; padding:16px 46px 0;}
+.printbtn{font-family:var(--face); font-size:13px; font-weight:600; letter-spacing:0.4px; color:#fff; background:var(--forest); border:none; border-radius:6px; padding:11px 22px; cursor:pointer;}
+.printbtn:hover{background:var(--forest-dark);}
+.page{box-shadow:0 2px 24px rgba(0,0,0,0.08); margin-top:14px; margin-bottom:40px;}
+@media print{
+  html,body{background:#fff;}
+  .printbar{display:none;}
+  .page{box-shadow:none; margin:0 auto;}
+}
+</style>
+</head>
+<body>
+<div class="printbar"><button class="printbtn" onclick="window.print()">Save as PDF / Print</button></div>
+<div class="page">
+
+  <div class="band">
+    <p class="kicker">Estimate &#183; Private Wellness Area</p>
+    <h1>Your indoor wellness room</h1>
+    <p class="meta">Prepared for Jay &#183; Birmingham indoor site<br>Ice bath &#183; Sauna &#183; Steam room &#8212; 17 July 2026</p>
+  </div>
+
+  <div class="inner">
+
+    <p class="intro">Here is an indicative estimate for the private wellness room we discussed &#8212; the ice bath, sauna and steam room. Figures below are provisional starting points to give you the shape of the investment; exact specification and pricing are confirmed once we begin your detailed build planning.</p>
+
+    <p class="label">What's included</p>
+    <table class="est">
+      <tr>
+        <td class="item">Ice bath / cold plunge</td>
+        <td class="price"><span class="ph">&#163;6,000</span> <span class="prov">(provisional)</span></td>
+      </tr>
+      <tr>
+        <td class="desc" colspan="2">Thermowood cold plunge, chill and drain-down provision. Fill and empty method specified at planning.</td>
+      </tr>
+      <tr>
+        <td class="item">Sauna</td>
+        <td class="price"><span class="ph">&#163;7,500</span> <span class="prov">(provisional)</span></td>
+      </tr>
+      <tr>
+        <td class="desc" colspan="2">Barrel sauna, heater and stones included. Heater upgrades (WiFi app / log-fired) optional at planning.</td>
+      </tr>
+      <tr>
+        <td class="item">Steam room</td>
+        <td class="price"><span class="ph">Included in room</span></td>
+      </tr>
+      <tr>
+        <td class="desc" colspan="2">Steam unit with drainage provision &#8212; the one element that does require a drain run, specified at planning.</td>
+      </tr>
+      <tr>
+        <td class="item">Design, install &amp; integration</td>
+        <td class="price"><span class="ph">Included in room</span></td>
+      </tr>
+      <tr>
+        <td class="desc" colspan="2">Layout design, access handling, fit-out and integration of all units into the space.</td>
+      </tr>
+    </table>
+
+    <div class="total">
+      <span class="tlabel">Indicative room total</span>
+      <span class="tfig"><span class="ph">~&#163;25,000</span></span>
+    </div>
+    <p class="total-note">Provisional ballpark for the room as discussed. Excludes any optional upgrades. Confirmed at detailed planning.</p>
+
+    <div class="provbox">
+      <p>These are indicative figures, not a fixed quotation. They reflect the room as we've discussed it so far and are here to give you a clear sense of the investment. Your exact specification, final pricing and detailed plans are drawn up once your place is secured.</p>
+    </div>
+
+    <div class="deposit">
+      <p class="dlabel">To secure your place</p>
+      <p class="dfig">&#163;500 deposit &#8212; non-refundable</p>
+      <p class="dsub">Deducted from your total. Secures your place in the build queue and lets us block out the time to produce your detailed plans, layout, drainage and steam specification, and the full design for the space.</p>
+      <p class="dlink">barrelsaunauk.com/secure-your-build</p>
+    </div>
+
+    <p class="label">What happens next</p>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><span class="t">Secure your place with the &#163;500 deposit.</span></div>
+      <div class="step"><span class="n">2</span><span class="t">We block out planning time and draw up your detailed layout and specification.</span></div>
+      <div class="step"><span class="n">3</span><span class="t">We confirm your final pricing, plumbing spec and build schedule.</span></div>
+    </div>
+
+  </div>
+
+  <div class="foot">
+    <p class="sign">The Barrel Sauna UK Team</p>
+    <p>+44 2920 676731 &#183; Office based in Wales &#183; Mon&#8211;Fri 9am&#8211;6pm<br>
+    Barrel Sauna UK &#8226; Handcrafted in Wales</p>
+  </div>
+
+</div>
+</body>
+</html>
