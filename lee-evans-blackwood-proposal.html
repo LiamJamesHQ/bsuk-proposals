@@ -188,24 +188,7 @@
   </div>
 </section>
 
-<section style="padding-top:20px;">
-  <div class="wrap">
-    <div class="vid-frame">
-      <div class="overlap-card">
-        <div class="kicker" style="margin-bottom:8px;">See one up close</div>
-        <div class="t">A walk around a similar build</div>
-        <div class="s">The same style of build, so you can see the finish and the feel of it before yours begins.</div>
-      </div>
-      <video id="walkvid" preload="metadata" playsinline src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a97cc2007f362e32140815e.mp4"></video>
-      <img class="wm" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a159cbca7ceea4e5718f77f.png" alt="Barrel Sauna UK">
-      <div class="play-disc" id="playdisc"><div class="disc"><div class="tri"></div></div></div>
-    </div>
-    <div class="photo-block">
-      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a97e133a227fec6bdaa033e.png" alt="Inside the barrel, benches either side and the wood burner on the back wall">
-      <div class="chip" style="position:absolute;top:16px;left:16px;">Inside</div>
-    </div>
-  </div>
-</section>
+
 
 <section>
   <div class="wrap">
@@ -306,23 +289,6 @@
   <div class="signoff">The Barrel Sauna UK Team</div>
   <div class="dom">barrelsaunauk.com &nbsp;&middot;&nbsp; Handcrafted in Wales</div>
 </div>
-
-<script>
-  (function(){
-    var v = document.getElementById('walkvid');
-    var d = document.getElementById('playdisc');
-    if(v && d){
-      d.addEventListener('click', function(){
-        v.setAttribute('controls','controls');
-        v.play();
-        d.style.display = 'none';
-      });
-      v.addEventListener('pause', function(){
-        if(v.currentTime === 0){ d.style.display = 'flex'; }
-      });
-    }
-  })();
-</script>
 
 </body>
 </html>
