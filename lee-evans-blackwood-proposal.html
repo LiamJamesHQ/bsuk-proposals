@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Blackwood Barrel Sauna | Barrel Sauna UK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ground:#16261C; --forest-deep:#1F3D28; --forest:#2B5336; --mid:#417C51;
+    --sage:#50795F; --sage-pale:#8fae86; --honey:#C08B41; --honey-l:#D6A868;
+    --maroon:#5E1F28; --body-dark:#dfe9df; --veil-body:#e9eee4;
+    --ink:#3A4240; --ink-l:#5C6663; --tint:#dbe7dd;
+    --hairline:rgba(65,124,81,0.30); --rule-soft:rgba(65,124,81,0.12);
+    --face:'Raleway', Arial, Helvetica, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:#ffffff;}
+  body{font-family:var(--face);color:var(--ink);font-weight:400;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px;}
+  img{max-width:100%;display:block;}
+
+  .kicker{font-size:12px;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:var(--honey);margin-bottom:14px;}
+  h2{font-size:36px;font-weight:700;line-height:1.12;letter-spacing:-0.5px;color:var(--ink);margin-bottom:16px;}
+  h2 span{color:var(--honey);}
+  p{margin-bottom:14px;max-width:680px;}
+  p.lede{font-size:18px;color:var(--ink-l);}
+  section{padding:72px 0;border-bottom:1px solid var(--rule-soft);}
+  section.dark{background:var(--ground);color:var(--body-dark);border-bottom:none;}
+  section.dark .kicker{color:var(--honey-l);}
+  section.dark h2{color:#ffffff;}
+  section.dark h2 span{color:var(--honey-l);}
+  section.dark p{color:var(--veil-body);}
+
+  /* hero */
+  .hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;
+    background:linear-gradient(180deg, rgba(22,38,28,0.55) 0%, rgba(22,38,28,0.35) 40%, rgba(22,38,28,0.88) 100%),
+    url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a97d6140ba3728cefcbcd23.png') center / cover no-repeat;}
+  .hero .inner{width:100%;padding:120px 24px 72px;max-width:960px;margin:0 auto;}
+  .hero .dash{width:44px;height:2px;background:var(--honey-l);margin-bottom:16px;}
+  .hero .kicker{color:var(--honey-l);}
+  .hero h1{color:#ffffff;font-size:52px;font-weight:700;line-height:1.05;letter-spacing:-1px;margin-bottom:16px;max-width:720px;}
+  .hero h1 span{color:var(--honey-l);}
+  .hero p{color:var(--veil-body);font-size:18px;max-width:560px;}
+
+  /* spec */
+  .ticks{max-width:680px;margin-top:10px;}
+  .ticks div{display:flex;gap:12px;font-size:16px;color:var(--ink-l);margin-bottom:10px;}
+  .ticks i{font-style:normal;color:var(--honey);font-weight:700;}
+  .spec-panel{background:var(--tint);border-left:4px solid var(--honey);border-radius:0 8px 8px 0;padding:26px 30px;margin-top:34px;max-width:680px;}
+  .spec-panel .plab{font-size:12px;font-weight:400;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:6px;}
+  .spec-panel .pval{font-size:22px;font-weight:700;color:var(--honey);}
+  .spec-panel .psub{font-size:15px;color:var(--forest-deep);margin-top:6px;}
+
+  /* video */
+  .video-frame{border-radius:10px;overflow:hidden;border:1px solid var(--hairline);margin-top:26px;background:var(--forest-deep);}
+  .video-frame video{width:100%;display:block;}
+
+  /* drawings */
+  .cad-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px;}
+  .cad{border:1px solid var(--hairline);border-radius:10px;overflow:hidden;background:#ffffff;}
+  .cad .cap{padding:12px 16px;font-size:12px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;color:var(--sage);border-top:1px solid var(--rule-soft);}
+
+  /* before after */
+  .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px;}
+  .ba{border-radius:10px;overflow:hidden;border:1px solid var(--hairline);background:#ffffff;}
+  .ba .tag{padding:12px 16px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--sage);border-top:1px solid var(--rule-soft);}
+  .ba.on .tag{color:var(--honey);}
+
+  /* interlude */
+  .interlude{background:var(--ground);text-align:center;padding:88px 24px;}
+  .interlude p{margin:0 auto;max-width:760px;color:var(--veil-body);font-size:30px;font-weight:200;line-height:1.35;}
+  .interlude p span{color:var(--honey-l);font-weight:400;}
+
+  /* price */
+  .price-panel{background:var(--forest);border-radius:10px;padding:44px 40px;max-width:680px;margin-top:10px;}
+  .price-panel .plab{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-pale);margin-bottom:8px;}
+  .price-panel .big{font-size:44px;font-weight:700;color:var(--honey-l);line-height:1.05;}
+  .price-panel .psub{color:var(--body-dark);font-size:16px;margin-top:14px;max-width:520px;}
+  .dep-panel{background:#ffffff;border:1px solid var(--hairline);border-radius:10px;padding:24px 28px;max-width:680px;margin-top:18px;font-size:15px;color:var(--ink-l);}
+  .dep-panel .plab{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:4px;}
+
+  /* steps */
+  .steps{max-width:680px;margin-top:26px;}
+  .step{display:flex;gap:18px;margin-bottom:22px;}
+  .step .num{flex:0 0 34px;height:34px;border-radius:17px;background:var(--honey);color:#ffffff;font-size:15px;font-weight:700;line-height:34px;text-align:center;}
+  .step .st{display:block;font-weight:700;color:var(--ink);font-size:17px;}
+  .step span{font-size:15px;color:var(--ink-l);}
+
+  footer{background:var(--forest);padding:44px 24px;text-align:center;}
+  footer .signoff{color:#ffffff;font-size:17px;font-weight:700;margin-bottom:8px;}
+  footer .dom{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-pale);}
+
+  @media(max-width:760px){
+    .hero h1{font-size:36px;}
+    h2{font-size:29px;}
+    .cad-grid,.ba-grid{grid-template-columns:1fr;}
+    .interlude p{font-size:23px;}
+    .price-panel{padding:34px 26px;}
+    .price-panel .big{font-size:36px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="inner">
+    <div class="dash"></div>
+    <div class="kicker">Prepared for Lee Evans</div>
+    <h1>Your <span>Blackwood</span> barrel sauna</h1>
+    <p>A 2.4m handcrafted barrel sauna with porch, built on site at your home.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">The build</div>
+    <h2>Your <span>specification</span></h2>
+    <p class="lede">Everything below is included in the one price at the bottom of this page.</p>
+    <div class="ticks">
+      <div><i>&#10003;</i>2.4m barrel sauna with porch</div>
+      <div><i>&#10003;</i>Wood burner</div>
+      <div><i>&#10003;</i>Two side benches</div>
+      <div><i>&#10003;</i>Thermal base</div>
+      <div><i>&#10003;</i>Under seat LEDs</div>
+      <div><i>&#10003;</i>One window on the front, no rear window</div>
+      <div><i>&#10003;</i>Built on site</div>
+    </div>
+    <div class="spec-panel">
+      <div class="plab">Footprint</div>
+      <div class="pval">2.5m long by 2m wide</div>
+      <div class="psub">With the porch overhang, sized to the space by your fence line.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">See one up close</div>
+    <h2>A walk around a <span>similar build</span></h2>
+    <p class="lede">The same style of build, so you can see the finish and the feel of it before yours begins.</p>
+    <div class="video-frame">
+      <video controls preload="metadata" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a97cc2007f362e32140815e.mp4"></video>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">On paper</div>
+    <h2>The <span>drawings</span></h2>
+    <div class="cad-grid">
+      <div class="cad">
+        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a97ccb007f362e321408cec.jpeg" alt="Birds eye view drawing of the 2.4m barrel sauna">
+        <div class="cap">Birds eye view</div>
+      </div>
+      <div class="cad">
+        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a97cc7fc7069f4fc7b0c03f.jpeg" alt="Footprint and feet spacing drawing">
+        <div class="cap">Footprint and feet spacing</div>
+      </div>
+      <div class="cad">
+        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a97cc7f07f362e321408916.jpeg" alt="Side view drawing">
+        <div class="cap">Side view</div>
+      </div>
+      <div class="cad">
+        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a97d1d2fac7854efe200f86.png" alt="Front view drawing">
+        <div class="cap">Front view</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Your space</div>
+    <h2>From <span>ready</span> to relaxing</h2>
+    <div class="ba-grid">
+      <div class="ba">
+        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a97cf47a227fec6bda85e69.jpeg" alt="The prepared base at your home as it is today">
+        <div class="tag">Before</div>
+      </div>
+      <div class="ba on">
+        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a97d52007f362e32141568d.png" alt="An impression of the same view with your sauna in place">
+        <div class="tag">After</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="interlude">
+  <p>Welsh family business. Handmade and made to order. <span>Designed around you.</span> Built to last.</p>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">The estimate</div>
+    <h2>One price for the <span>whole job</span></h2>
+    <div class="price-panel">
+      <div class="plab">Your build, complete</div>
+      <div class="big">&pound;8,500 + VAT</div>
+      <div class="psub">Covering the full specification above, built on site at your home in Blackwood.</div>
+    </div>
+    <div class="dep-panel">
+      <div class="plab">Securing your build spot</div>
+      A &pound;500 deposit secures your place in the build queue. Your deposit comes off the final balance.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">From here</div>
+    <h2>What happens <span>next</span></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <div><div class="st">Deposit</div><span>A &pound;500 deposit secures your build spot.</span></div>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div><div class="st">Spec confirmed</div><span>We lock in your full specification and issue your build invoice.</span></div>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <div><div class="st">Build queue</div><span>Your sauna is scheduled into our Welsh workshop and we give you a firm timeline.</span></div>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <div><div class="st">Built on site</div><span>We build at your home in Blackwood, on the base you have ready.</span></div>
+      </div>
+    </div>
+    <p style="max-width:680px;color:var(--ink-l);font-size:15px;">Any questions at all, just reply to this and we will come straight back to you.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="signoff">The Barrel Sauna UK Team</div>
+  <div class="dom">barrelsaunauk.com &nbsp;&middot;&nbsp; Handcrafted in Wales</div>
+</footer>
+
+</body>
+</html>
