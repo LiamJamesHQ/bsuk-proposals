@@ -58,13 +58,15 @@
   .fcard.feature .t{font-size:23px;line-height:1.25;}
   .fcard.feature .s{font-size:16px;}
 
-  /* heater bubble */
-  .led-row{display:flex;align-items:center;gap:24px;margin-top:26px;}
-  .led-bubble{flex:0 0 175px;width:175px;height:175px;border-radius:50%;overflow:hidden;box-shadow:var(--shadow);border:3px solid var(--honey);}
-  .led-bubble img{width:100%;height:100%;object-fit:cover;object-position:34% 58%;transform:scale(1.35);}
-  .led-row .cap{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--honey);margin-bottom:6px;}
-  .led-row .ct{font-size:19px;font-weight:700;color:var(--ink);line-height:1.3;}
-  .led-row .cs{font-size:15px;color:var(--ink-l);margin-top:4px;max-width:420px;}
+  /* heater callout sitting on the render */
+  .ptr{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;}
+  .ptr line{stroke:var(--honey);stroke-width:5;stroke-linecap:round;}
+  .hbub{position:absolute;left:5%;top:62%;width:20%;aspect-ratio:1;border-radius:50%;overflow:hidden;
+    border:3px solid var(--honey);box-shadow:0 12px 34px rgba(0,0,0,0.55);z-index:3;}
+  .hbub img{width:100%;height:100%;object-fit:cover;object-position:34% 58%;transform:scale(1.35);}
+  .hlab{position:absolute;left:5%;top:83.5%;width:30%;z-index:3;color:#ffffff;font-size:12px;font-weight:700;
+    letter-spacing:1.6px;text-transform:uppercase;line-height:1.35;text-shadow:0 2px 8px rgba(0,0,0,0.9);}
+  .hlab span{color:var(--honey-l);display:block;}
 
   /* build up cards */
   .build-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:20px;}
@@ -73,7 +75,7 @@
   .build-card ul{list-style:none;}
   .build-card li{font-size:14px;color:var(--ink-l);padding:7px 0;border-bottom:1px solid var(--rule-soft);line-height:1.45;}
   .build-card li:last-child{border-bottom:none;}
-  .diagram-card{background:#ffffff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);margin-top:20px;}
+  .diagram-card{background:#ffffff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);margin:24px auto 0;max-width:500px;}
   .diagram-card img{width:100%;display:block;}
   .diagram-card .cap{background:var(--forest-deep);border-top:3px solid var(--honey);color:#ffffff;padding:13px 18px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;}
 
@@ -95,7 +97,7 @@
   /* after: wider than the column, but held inside an edge */
   .after-block{max-width:1180px;margin:26px auto 0;padding:0 24px;}
   .after-frame{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 20px 54px rgba(22,38,28,0.32);}
-  .after-frame img{width:100%;height:72vh;object-fit:cover;display:block;}
+  .after-frame > img{width:100%;height:auto;display:block;}
   .after-frame .chip{top:24px;left:24px;font-size:13px;padding:10px 22px;}
   .note-line{max-width:680px;color:var(--ink-l);font-size:15px;margin-top:24px;}
 
@@ -157,7 +159,7 @@
     .journey .row{max-width:100%;}
     .before-strip img{height:180px;}
     .after-block{padding:0 14px;}
-    .after-frame img{height:52vh;}
+    .hlab{font-size:10px;letter-spacing:1px;width:40%;}
     .dream{padding:56px 0 62px;}
     .dream .dgrid{grid-template-columns:1fr;}
     .dream .dtop,.dream .dbot{font-size:28px;}
@@ -186,7 +188,7 @@
     <h2>Your <span>specification</span></h2>
     <p class="lede">Everything below is included in the sauna price further down this page.</p>
     <div class="card-grid">
-      <div class="fcard feature"><div class="disc">&#128293;</div><div><div class="t">Harvia WiFi cylinder heater</div><div class="s">Controlled from your phone, with heat resistant plates fitted behind it</div></div></div>
+      <div class="fcard feature"><div class="disc">&#128293;</div><div><div class="t">Harvia Cilindro PC90XE pillar heater</div><div class="s">A steel cage packed with stones, 101.6cm tall. WiFi controlled from your phone, with heat resistant plates fitted behind it</div></div></div>
       <div class="fcard"><div class="disc">&#129717;</div><div><div class="t">Insulated wall panels</div><div class="s">Thermowood</div></div></div>
       <div class="fcard"><div class="disc">&#129681;</div><div><div class="t">Straight benches</div><div class="s">Thermo-aspen, with back rest</div></div></div>
       <div class="fcard"><div class="disc">&#129695;</div><div><div class="t">Double glazed tempered glass window</div><div class="s">1940mm by 1940mm</div></div></div>
@@ -195,16 +197,6 @@
       <div class="fcard"><div class="disc">&#128208;</div><div><div class="t">Sheet metal trim</div></div></div>
       <div class="fcard"><div class="disc">&#128161;</div><div><div class="t">Warm under seat lights</div><div class="s">In the sauna</div></div></div>
       <div class="fcard"><div class="disc">&#10024;</div><div><div class="t">Roof spotlights</div><div class="s">In the changing room</div></div></div>
-    </div>
-    <div class="led-row">
-      <div class="led-bubble">
-        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/HARVIA" alt="Harvia Cilindro pillar heater lit inside a sauna">
-      </div>
-      <div>
-        <div class="cap">Your heater</div>
-        <div class="ct">Harvia Cilindro PC90XE</div>
-        <div class="cs">A pillar heater, 101.6cm tall, with a steel cage packed with stones. Controlled from the wall panel or from your phone.</div>
-      </div>
     </div>
     <div class="forest-box footprint-box">
       <div class="disc">&#128207;</div>
@@ -295,10 +287,16 @@
     <div class="after-frame">
       <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa427fd770fd0c165a629e8.jpg" alt="An impression of the same view with your sauna and ice bath in place">
       <div class="chip on">After</div>
+      <svg class="ptr" viewBox="0 0 1024 1024" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <line x1="216" y1="661" x2="288" y2="598"></line>
+        <line x1="181" y1="639" x2="243" y2="528"></line>
+      </svg>
+      <div class="hbub"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa436849f8b31b6abb653dd.png" alt="Harvia Cilindro pillar heater"></div>
+      <div class="hlab"><span>Your actual heater</span>Harvia Cilindro PC90XE</div>
     </div>
   </div>
   <div class="wrap">
-    <p class="note-line">An impression created from the video of your garden. Not a photograph, and details will vary in the finished build.</p>
+    <p class="note-line">An impression created from the video of your garden. Not a photograph, and details will vary in the finished build. The heater drawn inside the sauna is indicative only. Yours is the Harvia Cilindro PC90XE, shown in the circle.</p>
     <p class="note-line">Your concrete base measures 6m wide by 2.5m deep. The sauna sits against the barn with the ice bath in the corner beside the screen.</p>
   </div>
 </section>
